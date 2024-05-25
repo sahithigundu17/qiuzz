@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6a1b9a;
+    --secondary-color: #ab47bc;
+    --accent-color: #ffca28;
+    --light-color: #fff;
+    --dark-color: #000;
+    --grey-color: #f2f2f2;
+    --transition: all 300ms ease-in-out;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    color: var(--dark-color);
+    background: linear-gradient(135deg, #e3f2fd, #ffeb3b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    padding: 1.5rem 4rem 3rem 4rem;
+    width: 600px;
+    height: 680px;
+    border-top-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    position: relative;
+    box-shadow: 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quiz-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.quiz-score {
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: 5px solid var(--grey-color);
+    width: 120px;
+    height: 50px;
+    margin: 0.5rem auto;
+    color: var(--accent-color);
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.quiz-question {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.quiz-question .category {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.quiz-options {
+    list-style-type: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.quiz-options li {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin: 0.7rem 0;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.quiz-options li:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.quiz-options li:active {
+    transform: scale(0.95);
+}
+
+.selected {
+    background-color: var(--light-color) !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.quiz-foot button {
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    margin: 2rem auto 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-foot button:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.quiz-foot button:active {
+    transform: scale(0.95);
+}
+
+#play-again {
+    display: none;
+}
+
+/* Results styling */
+#result {
+    padding: 0.7rem 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+#result i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    display: inline-block;
+    text-align: center;
+}
+
+@media (max-width: 678px) {
+    .quiz-title {
+        font-size: 1.8rem;
+    }
+
+    .wrapper {
+        width: 90%;
+        padding: 1.5rem 1rem 3rem 1rem;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .quiz-foot button {
+        font-size: 1rem;
+    }
+}
